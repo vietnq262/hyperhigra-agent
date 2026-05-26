@@ -1,0 +1,33 @@
+llm_client:
+  api_key: ""
+  model_name: "gpt-4o-mini"
+  batch_size: 200
+
+data:
+  dataset_path: "./data/sample_data/dataset.json"
+  documents_path: "./data/processed/documents.json"
+  coref_document_path: "./data/processed/coref_documents.json"
+  er_path: "./data/processed/entity_relationship/er.json"
+  er_usage_path: "./data/processed/entity_relationship/er_usage.json"
+  hypergraph_path: "./data/processed/hypergraph/hgraph.json"
+  embedding_path: "./data/processed/embedding/corpus"
+
+retrieval:
+  backend: "hyperhigra"
+  diffusion_steps: 3
+  ontology_top_k: 20
+  entity_passage_top_k: 10
+  similarity_passage_top_k: 5
+  prune_top_k: 10
+  ppr_alpha: 0.85
+  rrf_semantic_constant: 10.0
+  rrf_ppr_constant: 10
+  passage_top_k: 20
+
+qa:
+  reasoning_mode: "adaptive_reasoning"
+  retrieval_mode: "hyperhigra_retriever"
+  pred_path: "./data/output/pred.json"
+
+evaluation:
+  eval_path: "./data/output/eval.json"
